@@ -1,0 +1,568 @@
+{
+  "datasetVersion": "1.0.0",
+  "projectName": "Chrono-Vision",
+  "language": "es",
+  "description": "Dataset base para el MVP de Chrono-Vision. Contiene tres sitios reales del Perú, sus clases de reconstrucción, información histórica resumida, elementos visuales para escenas A-Frame/Three.js y muestras simples para un modelo ML de clasificación.",
+  "disclaimer": "Las reconstrucciones son conceptuales y educativas. No buscan representar una reconstrucción histórica o arqueológica exacta.",
+  "mlTask": {
+    "type": "classification",
+    "input": [
+      "siteId",
+      "siteName",
+      "historicalInfo",
+      "currentDescription",
+      "visualTags",
+      "imagePath"
+    ],
+    "output": [
+      "predictedClass",
+      "confidence",
+      "targetYear",
+      "sceneTemplate"
+    ],
+    "classes": [
+      {
+        "classId": "urban_historical",
+        "label": "Sitio urbano histórico",
+        "description": "Zonas urbanas con arquitectura histórica, edificios, calles, balcones, faroles y plazas."
+      },
+      {
+        "classId": "archaeological_zone",
+        "label": "Zona arqueológica",
+        "description": "Espacios arqueológicos con muros, plazas ceremoniales, relieves, caminos de tierra o adobe."
+      },
+      {
+        "classId": "coastal_fortress",
+        "label": "Fortaleza costera",
+        "description": "Infraestructura militar histórica cercana al mar, con murallas, torres, cañones y patios."
+      }
+    ]
+  },
+  "sites": [
+    {
+      "siteId": "centro_lima",
+      "siteName": "Centro Histórico de Lima",
+      "displayName": "Centro Histórico de Lima",
+      "realLocation": {
+        "country": "Perú",
+        "region": "Lima",
+        "city": "Lima",
+        "approxCoordinates": {
+          "lat": -12.0464,
+          "lng": -77.0428
+        }
+      },
+      "category": "urban_historical",
+      "currentYear": 2077,
+      "targetYear": 2010,
+      "sceneTemplate": "urban_historical_reconstruction",
+      "imageRefs": {
+        "currentConceptImage": "/assets/images/sites/centro_lima/current_2077.jpg",
+        "referenceImage": "/assets/images/sites/centro_lima/reference.jpg",
+        "thumbnail": "/assets/images/sites/centro_lima/thumb.jpg"
+      },
+      "historicalInfo": "El Centro Histórico de Lima, conocido históricamente como la Ciudad de los Reyes, fue un núcleo político, administrativo, religioso y económico durante el Virreinato del Perú. Para el MVP se representa una zona urbana con fachadas históricas, balcones, faroles y calles tradicionales.",
+      "currentDescription": "En el año 2077, el centro histórico aparece deteriorado por abandono y colapso urbano: fachadas dañadas, balcones rotos, faroles caídos, polvo, grietas y escombros.",
+      "reconstructionGoal": "Reconstruir conceptualmente una versión restaurada del año 2010, con edificios históricos conservados, balcones completos, faroles activos, calle limpia y señalización histórica.",
+      "visualTags": [
+        "arquitectura colonial",
+        "balcones",
+        "faroles",
+        "edificios históricos",
+        "calles",
+        "plaza urbana",
+        "árboles",
+        "fachadas restauradas"
+      ],
+      "deteriorationCues": [
+        "grietas",
+        "escombros",
+        "polvo",
+        "balcones rotos",
+        "fachadas oscurecidas",
+        "cielo gris",
+        "faroles caídos"
+      ],
+      "reconstructedCues": [
+        "balcones completos",
+        "fachadas limpias",
+        "faroles encendidos",
+        "calle ordenada",
+        "árboles",
+        "cielo claro",
+        "paneles históricos"
+      ],
+      "aFrameObjectTypes": [
+        "colonial_building",
+        "road",
+        "tree",
+        "lamp_post",
+        "balcony",
+        "text_panel",
+        "debris"
+      ],
+      "reconstructionHints": {
+        "environment": {
+          "skyColorCurrent": "#4b5563",
+          "skyColorReconstructed": "#87ceeb",
+          "groundColorCurrent": "#3a332d",
+          "groundColorReconstructed": "#7a6a58"
+        },
+        "recommendedMaterials": [
+          "adobe_light",
+          "wood_dark",
+          "stone_gray",
+          "warm_light"
+        ],
+        "cameraStart": {
+          "x": 0,
+          "y": 1.7,
+          "z": 8
+        }
+      },
+      "hotspots": [
+        {
+          "id": "hotspot_balcones_lima",
+          "title": "Balcones históricos",
+          "description": "Los balcones son un elemento visual representativo del centro histórico limeño y ayudan a identificar la escena urbana reconstruida.",
+          "position": {
+            "x": -3,
+            "y": 3,
+            "z": -6
+          }
+        },
+        {
+          "id": "hotspot_fachada_lima",
+          "title": "Fachadas restauradas",
+          "description": "La reconstrucción conceptual muestra edificios históricos conservados para contrastar con la versión deteriorada del año 2077.",
+          "position": {
+            "x": 2.8,
+            "y": 2.5,
+            "z": -7
+          }
+        }
+      ],
+      "expectedBackendPrediction": {
+        "class": "urban_historical",
+        "confidenceRange": {
+          "min": 0.88,
+          "max": 0.96
+        }
+      }
+    },
+    {
+      "siteId": "chan_chan",
+      "siteName": "Chan Chan",
+      "displayName": "Ciudadela Chan Chan",
+      "realLocation": {
+        "country": "Perú",
+        "region": "La Libertad",
+        "city": "Trujillo",
+        "approxCoordinates": {
+          "lat": -8.111,
+          "lng": -79.075
+        }
+      },
+      "category": "archaeological_zone",
+      "currentYear": 2077,
+      "targetYear": 1450,
+      "sceneTemplate": "archaeological_zone_reconstruction",
+      "imageRefs": {
+        "currentConceptImage": "/assets/images/sites/chan_chan/current_2077.jpg",
+        "referenceImage": "/assets/images/sites/chan_chan/reference.jpg",
+        "thumbnail": "/assets/images/sites/chan_chan/thumb.jpg"
+      },
+      "historicalInfo": "Chan Chan fue capital del reino chimú y destaca por su arquitectura de tierra, ciudadelas, muros de adobe, plazas y organización ceremonial. Para el MVP se representa como una zona arqueológica que el sistema reconstruye conceptualmente hacia su etapa de esplendor.",
+      "currentDescription": "En el año 2077, Chan Chan aparece más erosionado por el tiempo y el ambiente desértico: muros bajos, relieves desgastados, arena acumulada y caminos parcialmente cubiertos.",
+      "reconstructionGoal": "Reconstruir conceptualmente una versión del año 1450, con muros de adobe más altos, relieves visibles, plazas internas, caminos definidos y antorchas ceremoniales.",
+      "visualTags": [
+        "muros de adobe",
+        "relieves geométricos",
+        "plazas ceremoniales",
+        "arena",
+        "caminos",
+        "ciudadela",
+        "arquitectura de tierra",
+        "antorchas"
+      ],
+      "deteriorationCues": [
+        "erosión",
+        "arena acumulada",
+        "muros bajos",
+        "relieves apagados",
+        "piedras dispersas",
+        "cielo seco",
+        "grietas"
+      ],
+      "reconstructedCues": [
+        "muros altos de adobe",
+        "relieves visibles",
+        "plaza ceremonial ordenada",
+        "caminos limpios",
+        "antorchas encendidas",
+        "paneles históricos",
+        "tonos cálidos"
+      ],
+      "aFrameObjectTypes": [
+        "adobe_wall",
+        "plaza",
+        "torch",
+        "text_panel",
+        "relief_panel",
+        "column",
+        "debris"
+      ],
+      "reconstructionHints": {
+        "environment": {
+          "skyColorCurrent": "#8a735d",
+          "skyColorReconstructed": "#f1c27d",
+          "groundColorCurrent": "#b38b5d",
+          "groundColorReconstructed": "#c99a63"
+        },
+        "recommendedMaterials": [
+          "adobe",
+          "sand",
+          "warm_light",
+          "carved_wall"
+        ],
+        "cameraStart": {
+          "x": 0,
+          "y": 1.7,
+          "z": 9
+        }
+      },
+      "hotspots": [
+        {
+          "id": "hotspot_muros_chan_chan",
+          "title": "Muros de adobe",
+          "description": "Los muros de adobe permiten representar la arquitectura de tierra característica de Chan Chan en una versión conceptual.",
+          "position": {
+            "x": -3.5,
+            "y": 2,
+            "z": -5.5
+          }
+        },
+        {
+          "id": "hotspot_relieves_chan_chan",
+          "title": "Relieves geométricos",
+          "description": "Los relieves ayudan a diferenciar la escena arqueológica y funcionan como puntos interactivos de información histórica.",
+          "position": {
+            "x": 3.2,
+            "y": 1.8,
+            "z": -6
+          }
+        }
+      ],
+      "expectedBackendPrediction": {
+        "class": "archaeological_zone",
+        "confidenceRange": {
+          "min": 0.87,
+          "max": 0.95
+        }
+      }
+    },
+    {
+      "siteId": "real_felipe",
+      "siteName": "Fortaleza del Real Felipe",
+      "displayName": "Fortaleza del Real Felipe",
+      "realLocation": {
+        "country": "Perú",
+        "region": "Callao",
+        "city": "Callao",
+        "approxCoordinates": {
+          "lat": -12.0626,
+          "lng": -77.1491
+        }
+      },
+      "category": "coastal_fortress",
+      "currentYear": 2077,
+      "targetYear": 1800,
+      "sceneTemplate": "coastal_fortress_reconstruction",
+      "imageRefs": {
+        "currentConceptImage": "/assets/images/sites/real_felipe/current_2077.jpg",
+        "referenceImage": "/assets/images/sites/real_felipe/reference.jpg",
+        "thumbnail": "/assets/images/sites/real_felipe/thumb.jpg"
+      },
+      "historicalInfo": "La Fortaleza del Real Felipe es un complejo histórico militar ubicado en la bahía del Callao. Fue construida con fines defensivos frente a ataques marítimos. Para el MVP se representa como una fortaleza costera con murallas, torres, cañones, patio interior y cercanía al mar.",
+      "currentDescription": "En el año 2077, la fortaleza aparece deteriorada por abandono, corrosión y cercanía al mar: murallas agrietadas, cañones oxidados, niebla costera y zonas parcialmente inundadas.",
+      "reconstructionGoal": "Reconstruir conceptualmente una versión del año 1800, con murallas completas, torres restauradas, cañones en buen estado, patio despejado, bandera e iluminación cálida.",
+      "visualTags": [
+        "fortaleza",
+        "murallas",
+        "torres",
+        "cañones",
+        "bahía",
+        "mar",
+        "patio interior",
+        "bandera",
+        "defensa costera"
+      ],
+      "deteriorationCues": [
+        "murallas dañadas",
+        "cañones oxidados",
+        "niebla",
+        "agua cercana",
+        "piedras rotas",
+        "cielo oscuro",
+        "corrosión"
+      ],
+      "reconstructedCues": [
+        "murallas completas",
+        "torres limpias",
+        "cañones restaurados",
+        "bandera",
+        "patio ordenado",
+        "mar tranquilo",
+        "luz cálida"
+      ],
+      "aFrameObjectTypes": [
+        "wall",
+        "tower",
+        "cannon",
+        "water",
+        "flag",
+        "plaza",
+        "text_panel",
+        "debris"
+      ],
+      "reconstructionHints": {
+        "environment": {
+          "skyColorCurrent": "#475569",
+          "skyColorReconstructed": "#9bd3f5",
+          "groundColorCurrent": "#4a4a4a",
+          "groundColorReconstructed": "#86745e",
+          "waterColor": "#2f80a8"
+        },
+        "recommendedMaterials": [
+          "stone_gray",
+          "metal_dark",
+          "water",
+          "warm_light"
+        ],
+        "cameraStart": {
+          "x": 0,
+          "y": 1.7,
+          "z": 10
+        }
+      },
+      "hotspots": [
+        {
+          "id": "hotspot_canones_real_felipe",
+          "title": "Cañones defensivos",
+          "description": "Los cañones representan el carácter militar defensivo de la fortaleza y permiten diferenciar esta escena de las demás.",
+          "position": {
+            "x": -2.7,
+            "y": 1.2,
+            "z": -5.8
+          }
+        },
+        {
+          "id": "hotspot_murallas_real_felipe",
+          "title": "Murallas costeras",
+          "description": "Las murallas restauradas muestran la transición entre una fortaleza deteriorada y su versión histórica reconstruida.",
+          "position": {
+            "x": 3.2,
+            "y": 2.4,
+            "z": -7
+          }
+        }
+      ],
+      "expectedBackendPrediction": {
+        "class": "coastal_fortress",
+        "confidenceRange": {
+          "min": 0.86,
+          "max": 0.94
+        }
+      }
+    }
+  ],
+  "trainingSamples": [
+    {
+      "sampleId": "centro_lima_001",
+      "siteId": "centro_lima",
+      "imagePath": "/assets/images/dataset/centro_lima_001.jpg",
+      "inputText": "Zona urbana histórica con balcones coloniales, faroles, fachadas antiguas, calles tradicionales y plaza central.",
+      "visualTags": [
+        "balcones",
+        "faroles",
+        "edificios históricos",
+        "calle urbana"
+      ],
+      "label": "urban_historical",
+      "targetYear": 2010
+    },
+    {
+      "sampleId": "centro_lima_002",
+      "siteId": "centro_lima",
+      "imagePath": "/assets/images/dataset/centro_lima_002.jpg",
+      "inputText": "Centro histórico deteriorado con edificios coloniales dañados, balcones rotos, escombros y cielo gris.",
+      "visualTags": [
+        "balcones rotos",
+        "fachadas",
+        "escombros",
+        "arquitectura colonial"
+      ],
+      "label": "urban_historical",
+      "targetYear": 2010
+    },
+    {
+      "sampleId": "centro_lima_003",
+      "siteId": "centro_lima",
+      "imagePath": "/assets/images/dataset/centro_lima_003.jpg",
+      "inputText": "Fachadas históricas restauradas, faroles encendidos, calle limpia y paneles de información urbana.",
+      "visualTags": [
+        "fachadas restauradas",
+        "faroles",
+        "calle",
+        "panel histórico"
+      ],
+      "label": "urban_historical",
+      "targetYear": 2010
+    },
+    {
+      "sampleId": "centro_lima_004",
+      "siteId": "centro_lima",
+      "imagePath": "/assets/images/dataset/centro_lima_004.jpg",
+      "inputText": "Escena urbana con arquitectura virreinal, balcones de madera y edificios alineados alrededor de una calle central.",
+      "visualTags": [
+        "arquitectura virreinal",
+        "balcones de madera",
+        "calle central"
+      ],
+      "label": "urban_historical",
+      "targetYear": 2010
+    },
+    {
+      "sampleId": "chan_chan_001",
+      "siteId": "chan_chan",
+      "imagePath": "/assets/images/dataset/chan_chan_001.jpg",
+      "inputText": "Zona arqueológica desértica con muros de adobe, relieves geométricos, caminos de arena y plazas internas.",
+      "visualTags": [
+        "muros de adobe",
+        "relieves",
+        "arena",
+        "plazas"
+      ],
+      "label": "archaeological_zone",
+      "targetYear": 1450
+    },
+    {
+      "sampleId": "chan_chan_002",
+      "siteId": "chan_chan",
+      "imagePath": "/assets/images/dataset/chan_chan_002.jpg",
+      "inputText": "Ciudadela de adobe erosionada con muros bajos, relieves desgastados y caminos parcialmente cubiertos por arena.",
+      "visualTags": [
+        "ciudadela",
+        "adobe",
+        "erosión",
+        "caminos de arena"
+      ],
+      "label": "archaeological_zone",
+      "targetYear": 1450
+    },
+    {
+      "sampleId": "chan_chan_003",
+      "siteId": "chan_chan",
+      "imagePath": "/assets/images/dataset/chan_chan_003.jpg",
+      "inputText": "Reconstrucción ceremonial con muros altos de adobe, antorchas, plaza central y relieves visibles.",
+      "visualTags": [
+        "muros altos",
+        "antorchas",
+        "plaza ceremonial",
+        "relieves"
+      ],
+      "label": "archaeological_zone",
+      "targetYear": 1450
+    },
+    {
+      "sampleId": "chan_chan_004",
+      "siteId": "chan_chan",
+      "imagePath": "/assets/images/dataset/chan_chan_004.jpg",
+      "inputText": "Paisaje arqueológico de tierra con estructuras rectangulares, patios internos y decoración mural geométrica.",
+      "visualTags": [
+        "patios internos",
+        "decoración mural",
+        "estructuras rectangulares"
+      ],
+      "label": "archaeological_zone",
+      "targetYear": 1450
+    },
+    {
+      "sampleId": "real_felipe_001",
+      "siteId": "real_felipe",
+      "imagePath": "/assets/images/dataset/real_felipe_001.jpg",
+      "inputText": "Fortaleza costera con murallas de piedra, torres, cañones, patio interior y cercanía al mar.",
+      "visualTags": [
+        "fortaleza",
+        "murallas",
+        "cañones",
+        "mar"
+      ],
+      "label": "coastal_fortress",
+      "targetYear": 1800
+    },
+    {
+      "sampleId": "real_felipe_002",
+      "siteId": "real_felipe",
+      "imagePath": "/assets/images/dataset/real_felipe_002.jpg",
+      "inputText": "Complejo militar histórico deteriorado con cañones oxidados, niebla costera y murallas agrietadas.",
+      "visualTags": [
+        "cañones oxidados",
+        "niebla",
+        "murallas",
+        "complejo militar"
+      ],
+      "label": "coastal_fortress",
+      "targetYear": 1800
+    },
+    {
+      "sampleId": "real_felipe_003",
+      "siteId": "real_felipe",
+      "imagePath": "/assets/images/dataset/real_felipe_003.jpg",
+      "inputText": "Fortaleza restaurada con torres limpias, murallas completas, bandera, patio despejado y luz cálida.",
+      "visualTags": [
+        "torres",
+        "murallas completas",
+        "bandera",
+        "patio"
+      ],
+      "label": "coastal_fortress",
+      "targetYear": 1800
+    },
+    {
+      "sampleId": "real_felipe_004",
+      "siteId": "real_felipe",
+      "imagePath": "/assets/images/dataset/real_felipe_004.jpg",
+      "inputText": "Escena defensiva marítima con bastiones, cañones, costa visible y estructura militar colonial.",
+      "visualTags": [
+        "bastiones",
+        "cañones",
+        "costa",
+        "estructura militar"
+      ],
+      "label": "coastal_fortress",
+      "targetYear": 1800
+    }
+  ],
+  "backendResponseContract": {
+    "endpoint": "POST /reconstruct",
+    "requestExample": {
+      "siteId": "centro_lima",
+      "siteName": "Centro Histórico de Lima",
+      "imageUrl": "/assets/images/sites/centro_lima/current_2077.jpg",
+      "historicalInfo": "Zona urbana histórica con arquitectura colonial, balcones, plazas y calles tradicionales."
+    },
+    "responseFields": [
+      "siteId",
+      "sceneName",
+      "currentYear",
+      "targetYear",
+      "prediction.class",
+      "prediction.confidence",
+      "environment",
+      "objects",
+      "hotspots",
+      "effects"
+    ]
+  }
+}

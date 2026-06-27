@@ -1,0 +1,381 @@
+{
+  "sceneName": "Fortaleza del Real Felipe — Reconstrucción 1800",
+  "currentYear": 2077,
+  "targetYear": 1800,
+  "environment": {
+    "sky": "#9fc4e0",
+    "fog": "#c4dcee",
+    "ground": "#a89a7e",
+    "lightColor": "#fff2dc",
+    "lightIntensity": 1.15,
+    "ambient": 0.82
+  },
+  "objects": [
+    {
+      "id": "r_sea",
+      "type": "water",
+      "position": {
+        "x": -16,
+        "y": 0.05,
+        "z": -8
+      },
+      "scale": {
+        "x": 24,
+        "y": 1,
+        "z": 40
+      },
+      "material": {
+        "color": "#3f7fa8",
+        "opacity": 0.9
+      }
+    },
+    {
+      "id": "r_sea_back",
+      "type": "water",
+      "position": {
+        "x": 0,
+        "y": 0.04,
+        "z": -22
+      },
+      "scale": {
+        "x": 60,
+        "y": 1,
+        "z": 16
+      },
+      "material": {
+        "color": "#3f7fa8",
+        "opacity": 0.9
+      }
+    },
+    {
+      "id": "r_plaza",
+      "type": "plaza",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -8
+      },
+      "scale": {
+        "x": 26,
+        "y": 1,
+        "z": 30
+      },
+      "material": {
+        "color": "#bfae8c"
+      },
+      "interactive": true,
+      "info": "Patio de armas: espacio central de circulación y organización militar."
+    },
+    {
+      "id": "r_gate",
+      "type": "fort_gate",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -14
+      },
+      "w": 5,
+      "h": 4.2,
+      "d": 1.2,
+      "material": {
+        "color": "#c2bcaa"
+      },
+      "interactive": true,
+      "info": "Puerta principal de la fortaleza, con arco de medio punto y escudo."
+    },
+    {
+      "id": "r_wall_back_l",
+      "type": "wall",
+      "position": {
+        "x": -5.5,
+        "y": 0,
+        "z": -14
+      },
+      "w": 5,
+      "h": 3.2,
+      "d": 1,
+      "material": {
+        "color": "#c2bcaa"
+      }
+    },
+    {
+      "id": "r_wall_back_r",
+      "type": "wall",
+      "position": {
+        "x": 5.5,
+        "y": 0,
+        "z": -14
+      },
+      "w": 5,
+      "h": 3.2,
+      "d": 1,
+      "material": {
+        "color": "#c2bcaa"
+      }
+    },
+    {
+      "id": "r_wall_left",
+      "type": "wall",
+      "position": {
+        "x": -7.5,
+        "y": 0,
+        "z": -9
+      },
+      "rotation": {
+        "x": 0,
+        "y": 90,
+        "z": 0
+      },
+      "w": 11,
+      "h": 3,
+      "d": 1,
+      "material": {
+        "color": "#c2bcaa"
+      },
+      "interactive": true,
+      "info": "Muralla defensiva con almenas, parte del sistema de protección del puerto."
+    },
+    {
+      "id": "r_wall_right",
+      "type": "wall",
+      "position": {
+        "x": 7.5,
+        "y": 0,
+        "z": -9
+      },
+      "rotation": {
+        "x": 0,
+        "y": -90,
+        "z": 0
+      },
+      "w": 11,
+      "h": 3,
+      "d": 1,
+      "material": {
+        "color": "#c2bcaa"
+      }
+    },
+    {
+      "id": "r_tower_1",
+      "type": "tower",
+      "position": {
+        "x": -3,
+        "y": 0,
+        "z": -13
+      },
+      "r": 1.6,
+      "flag": true,
+      "flagColor": "#c0392b",
+      "material": {
+        "color": "#c2bcaa"
+      },
+      "interactive": true,
+      "info": "Torreón del Rey: baluarte con garita de vigilancia."
+    },
+    {
+      "id": "r_tower_2",
+      "type": "tower",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "z": -13
+      },
+      "r": 1.6,
+      "flag": true,
+      "flagColor": "#c0392b",
+      "material": {
+        "color": "#c2bcaa"
+      }
+    },
+    {
+      "id": "r_cannon_1",
+      "type": "cannon",
+      "position": {
+        "x": -4,
+        "y": 0.4,
+        "z": -6
+      },
+      "material": {
+        "color": "#2c2c2c"
+      },
+      "interactive": true,
+      "info": "Cañón de bronce restaurado, orientado a la línea de costa."
+    },
+    {
+      "id": "r_cannon_2",
+      "type": "cannon",
+      "position": {
+        "x": -1.4,
+        "y": 0.4,
+        "z": -6
+      },
+      "material": {
+        "color": "#2c2c2c"
+      }
+    },
+    {
+      "id": "r_cannon_3",
+      "type": "cannon",
+      "position": {
+        "x": 1.4,
+        "y": 0.4,
+        "z": -6
+      },
+      "material": {
+        "color": "#2c2c2c"
+      }
+    },
+    {
+      "id": "r_cannon_4",
+      "type": "cannon",
+      "position": {
+        "x": 4,
+        "y": 0.4,
+        "z": -6
+      },
+      "material": {
+        "color": "#2c2c2c"
+      }
+    },
+    {
+      "id": "r_balls_1",
+      "type": "cannonballs",
+      "position": {
+        "x": -3.1,
+        "y": 0,
+        "z": -6.2
+      },
+      "material": {
+        "color": "#2c2c2c"
+      }
+    },
+    {
+      "id": "r_balls_2",
+      "type": "cannonballs",
+      "position": {
+        "x": 2.3,
+        "y": 0,
+        "z": -6.2
+      },
+      "material": {
+        "color": "#2c2c2c"
+      }
+    },
+    {
+      "id": "r_banner_1",
+      "type": "banner",
+      "position": {
+        "x": -1.7,
+        "y": 0,
+        "z": -12.8
+      },
+      "material": {
+        "color": "#c0392b"
+      }
+    },
+    {
+      "id": "r_banner_2",
+      "type": "banner",
+      "position": {
+        "x": 1.7,
+        "y": 0,
+        "z": -12.8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      },
+      "material": {
+        "color": "#d9d2c4"
+      }
+    },
+    {
+      "id": "r_flagpole",
+      "type": "banner",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -9
+      },
+      "material": {
+        "color": "#e4ddcf"
+      }
+    },
+    {
+      "id": "r_torch_1",
+      "type": "torch",
+      "position": {
+        "x": -3.4,
+        "y": 0,
+        "z": -7.5
+      },
+      "material": {
+        "color": "#ff9a4a"
+      }
+    },
+    {
+      "id": "r_torch_2",
+      "type": "torch",
+      "position": {
+        "x": 3.4,
+        "y": 0,
+        "z": -7.5
+      },
+      "material": {
+        "color": "#ff9a4a"
+      }
+    },
+    {
+      "id": "r_panel",
+      "type": "text_panel",
+      "position": {
+        "x": 0,
+        "y": 3,
+        "z": -8
+      },
+      "info": "Fortaleza del Real Felipe\nCallao, 1800 — base militar que defendía el puerto."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "r_hs_1",
+      "target": "r_wall_left",
+      "title": "Murallas defensivas",
+      "description": "Las murallas formaban parte del sistema defensivo principal de la fortaleza y protegían el puerto del Callao.",
+      "position": {
+        "x": -4.4,
+        "y": 3,
+        "z": -8
+      }
+    },
+    {
+      "id": "r_hs_2",
+      "target": "r_cannon_1",
+      "title": "Cañones",
+      "description": "Los cañones eran elementos clave en la defensa costera y en el control del acceso marítimo.",
+      "position": {
+        "x": -4,
+        "y": 1.4,
+        "z": -5
+      }
+    },
+    {
+      "id": "r_hs_3",
+      "target": "r_plaza",
+      "title": "Patio o plaza interior",
+      "description": "La fortaleza incluía espacios interiores para circulación, organización militar y operaciones defensivas.",
+      "position": {
+        "x": 1.6,
+        "y": 1.6,
+        "z": -9
+      }
+    }
+  ],
+  "effects": {
+    "particleColor": "#36e0c8",
+    "particleCount": 1500,
+    "scanSpeed": 1.5,
+    "glow": true
+  }
+}

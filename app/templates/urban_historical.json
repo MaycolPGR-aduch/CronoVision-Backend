@@ -1,0 +1,202 @@
+{
+  "sceneName": "Centro Histórico de Lima — Reconstrucción 2010",
+  "currentYear": 2077,
+  "targetYear": 2010,
+  "environment": {
+    "sky": "#aebfd0",
+    "fog": "#c2d2de",
+    "ground": "#897f6c",
+    "lightColor": "#fff2dc",
+    "lightIntensity": 1.1,
+    "ambient": 0.8
+  },
+  "objects": [
+    {
+      "id": "l_plaza",
+      "type": "plaza",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -7
+      },
+      "scale": {
+        "x": 26,
+        "y": 1,
+        "z": 26
+      },
+      "material": {
+        "color": "#897f6c"
+      }
+    },
+    {
+      "id": "l_build_left",
+      "type": "colonial_building",
+      "position": {
+        "x": -6,
+        "y": 0,
+        "z": -6.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 18,
+        "z": 0
+      },
+      "interactive": true,
+      "info": "Casona colonial con arquería y balcón de madera tallada, restaurada al estado de 2010."
+    },
+    {
+      "id": "l_build_right",
+      "type": "colonial_building",
+      "position": {
+        "x": 6,
+        "y": 0,
+        "z": -6.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": -18,
+        "z": 0
+      },
+      "interactive": true,
+      "info": "Fachada colonial con balcón completo y arcos del primer piso."
+    },
+    {
+      "id": "l_church",
+      "type": "church",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -17
+      },
+      "interactive": true,
+      "info": "Iglesia histórica con torre campanario y cúpula, eje del centro virreinal."
+    },
+    {
+      "id": "l_balustrade",
+      "type": "balustrade",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -6
+      },
+      "length": 6
+    },
+    {
+      "id": "l_fountain",
+      "type": "fountain",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -3.5
+      },
+      "interactive": true,
+      "info": "Fuente de piedra restaurada, punto central de la plaza."
+    },
+    {
+      "id": "l_lamp_1",
+      "type": "lamp_post",
+      "position": {
+        "x": -2.6,
+        "y": 0,
+        "z": -3.2
+      },
+      "lit": true,
+      "info": "Farol de hierro encendido."
+    },
+    {
+      "id": "l_lamp_2",
+      "type": "lamp_post",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "z": -4.2
+      },
+      "lit": true
+    },
+    {
+      "id": "l_lamp_3",
+      "type": "lamp_post",
+      "position": {
+        "x": -3.6,
+        "y": 0,
+        "z": -2.2
+      },
+      "lit": true
+    },
+    {
+      "id": "l_tree_1",
+      "type": "tree",
+      "position": {
+        "x": 4.4,
+        "y": 0,
+        "z": -2.8
+      },
+      "material": {
+        "color": "#3f8a3a"
+      }
+    },
+    {
+      "id": "l_tree_2",
+      "type": "tree",
+      "position": {
+        "x": -4.6,
+        "y": 0,
+        "z": -5.6
+      },
+      "material": {
+        "color": "#4a9b44"
+      }
+    },
+    {
+      "id": "l_panel",
+      "type": "text_panel",
+      "position": {
+        "x": 0,
+        "y": 2.6,
+        "z": -5
+      },
+      "info": "Plaza Mayor de Lima\nFundada en 1535 — corazón virreinal del Perú."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "l_hs_1",
+      "target": "l_build_left",
+      "title": "Balcones coloniales",
+      "description": "Los balcones de madera eran uno de los elementos más representativos de la arquitectura histórica limeña.",
+      "position": {
+        "x": -4.6,
+        "y": 3,
+        "z": -5
+      }
+    },
+    {
+      "id": "l_hs_2",
+      "target": "l_church",
+      "title": "Iglesia histórica",
+      "description": "El centro histórico concentraba edificios religiosos y administrativos de alto valor patrimonial.",
+      "position": {
+        "x": 0,
+        "y": 4.5,
+        "z": -12
+      }
+    },
+    {
+      "id": "l_hs_3",
+      "target": "l_fountain",
+      "title": "Plaza central",
+      "description": "La plaza funcionaba como espacio urbano de encuentro, tránsito e intercambio cultural.",
+      "position": {
+        "x": 1.6,
+        "y": 1.6,
+        "z": -3.5
+      }
+    }
+  ],
+  "effects": {
+    "particleColor": "#36e0c8",
+    "particleCount": 1400,
+    "scanSpeed": 1.4,
+    "glow": true
+  }
+}

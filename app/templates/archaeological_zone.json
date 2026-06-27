@@ -1,0 +1,327 @@
+{
+  "sceneName": "Chan Chan — Reconstrucción 1450",
+  "currentYear": 2077,
+  "targetYear": 1450,
+  "environment": {
+    "sky": "#86bce6",
+    "fog": "#d8d2be",
+    "ground": "#cdb083",
+    "lightColor": "#fff0cf",
+    "lightIntensity": 1.15,
+    "ambient": 0.85
+  },
+  "objects": [
+    {
+      "id": "c_plaza",
+      "type": "plaza",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -8
+      },
+      "scale": {
+        "x": 30,
+        "y": 1,
+        "z": 32
+      },
+      "material": {
+        "color": "#cdb083"
+      }
+    },
+    {
+      "id": "c_wall_left",
+      "type": "adobe_wall",
+      "position": {
+        "x": -6.5,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 90,
+        "z": 0
+      },
+      "w": 13,
+      "h": 2.8,
+      "d": 0.7,
+      "relief": "diamond",
+      "material": {
+        "color": "#cda878"
+      },
+      "interactive": true,
+      "info": "Muro de adobe con relieves geométricos en rombos, restaurado a su estado de 1450."
+    },
+    {
+      "id": "c_wall_right",
+      "type": "adobe_wall",
+      "position": {
+        "x": 6.5,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": {
+        "x": 0,
+        "y": -90,
+        "z": 0
+      },
+      "w": 13,
+      "h": 2.8,
+      "d": 0.7,
+      "relief": "lattice",
+      "material": {
+        "color": "#d3b07c"
+      },
+      "interactive": true,
+      "info": "Friso de celosía: patrones repetidos que evocan redes y olas del mar."
+    },
+    {
+      "id": "c_huaca",
+      "type": "adobe_platform",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -16
+      },
+      "w": 9,
+      "h": 3,
+      "d": 4,
+      "relief": "steps",
+      "material": {
+        "color": "#cda878"
+      },
+      "interactive": true,
+      "info": "Plataforma ceremonial (huaca) con portada trapezoidal y escalinata de acceso."
+    },
+    {
+      "id": "c_col_1",
+      "type": "column",
+      "position": {
+        "x": -3,
+        "y": 0,
+        "z": -6
+      },
+      "material": {
+        "color": "#c9a877"
+      }
+    },
+    {
+      "id": "c_col_2",
+      "type": "column",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "z": -6
+      },
+      "material": {
+        "color": "#c9a877"
+      }
+    },
+    {
+      "id": "c_col_3",
+      "type": "column",
+      "position": {
+        "x": -3,
+        "y": 0,
+        "z": -11
+      },
+      "material": {
+        "color": "#c9a877"
+      }
+    },
+    {
+      "id": "c_col_4",
+      "type": "column",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "z": -11
+      },
+      "material": {
+        "color": "#c9a877"
+      }
+    },
+    {
+      "id": "c_torch_1",
+      "type": "torch",
+      "position": {
+        "x": -4.2,
+        "y": 0,
+        "z": -5
+      },
+      "material": {
+        "color": "#ff8a3a"
+      },
+      "info": "Antorcha ceremonial."
+    },
+    {
+      "id": "c_torch_2",
+      "type": "torch",
+      "position": {
+        "x": 4.2,
+        "y": 0,
+        "z": -5
+      },
+      "material": {
+        "color": "#ff8a3a"
+      }
+    },
+    {
+      "id": "c_torch_3",
+      "type": "torch",
+      "position": {
+        "x": -4.2,
+        "y": 0,
+        "z": -11
+      },
+      "material": {
+        "color": "#ff8a3a"
+      }
+    },
+    {
+      "id": "c_torch_4",
+      "type": "torch",
+      "position": {
+        "x": 4.2,
+        "y": 0,
+        "z": -11
+      },
+      "material": {
+        "color": "#ff8a3a"
+      }
+    },
+    {
+      "id": "c_banner_1",
+      "type": "banner",
+      "position": {
+        "x": -2.6,
+        "y": 0,
+        "z": -13
+      },
+      "material": {
+        "color": "#d9a93a"
+      }
+    },
+    {
+      "id": "c_banner_2",
+      "type": "banner",
+      "position": {
+        "x": 2.6,
+        "y": 0,
+        "z": -13
+      },
+      "rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      },
+      "material": {
+        "color": "#cf9a2f"
+      }
+    },
+    {
+      "id": "c_planter",
+      "type": "custom_box",
+      "position": {
+        "x": 0,
+        "y": 0.15,
+        "z": -7
+      },
+      "geometry": {
+        "width": 3.2,
+        "height": 0.3,
+        "depth": 3.2
+      },
+      "material": {
+        "color": "#7a5a3a",
+        "roughness": 1
+      },
+      "interactive": true,
+      "info": "Patio central con jardinera, núcleo de la organización ceremonial."
+    },
+    {
+      "id": "c_palm_1",
+      "type": "tree",
+      "position": {
+        "x": -0.8,
+        "y": 0.3,
+        "z": -7
+      },
+      "scale": {
+        "x": 0.8,
+        "y": 0.9,
+        "z": 0.8
+      },
+      "material": {
+        "color": "#4a8a3a"
+      }
+    },
+    {
+      "id": "c_palm_2",
+      "type": "tree",
+      "position": {
+        "x": 0.8,
+        "y": 0.3,
+        "z": -6.6
+      },
+      "scale": {
+        "x": 0.8,
+        "y": 1,
+        "z": 0.8
+      },
+      "material": {
+        "color": "#3f7e34"
+      }
+    },
+    {
+      "id": "c_panel",
+      "type": "text_panel",
+      "position": {
+        "x": 0,
+        "y": 2.8,
+        "z": -6
+      },
+      "info": "Ciudadela de Chan Chan\nCapital del reino Chimú — apogeo ceremonial en 1450."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "c_hs_1",
+      "target": "c_wall_left",
+      "title": "Relieves geométricos",
+      "description": "Los muros de Chan Chan incorporaban relieves decorativos con patrones geométricos y simbólicos.",
+      "position": {
+        "x": -3.6,
+        "y": 2.6,
+        "z": -6
+      }
+    },
+    {
+      "id": "c_hs_2",
+      "target": "c_planter",
+      "title": "Plaza ceremonial",
+      "description": "Las plazas y patios abiertos cumplían funciones ceremoniales, políticas y administrativas.",
+      "position": {
+        "x": 1.6,
+        "y": 1.8,
+        "z": -7
+      }
+    },
+    {
+      "id": "c_hs_3",
+      "target": "c_huaca",
+      "title": "Arquitectura de adobe",
+      "description": "Chan Chan fue una de las mayores ciudades de adobe del mundo y capital del reino Chimú.",
+      "position": {
+        "x": 0,
+        "y": 3.8,
+        "z": -13
+      }
+    }
+  ],
+  "effects": {
+    "particleColor": "#36e0c8",
+    "particleCount": 1300,
+    "scanSpeed": 1.3,
+    "glow": true
+  }
+}

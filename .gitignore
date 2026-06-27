@@ -1,0 +1,22 @@
+# Entorno virtual (NO subir, pesa cientos de MB)
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Variables de entorno (secretos)
+.env
+.env.local
+
+# Nota: el modelo entrenado (app/ml/artifacts/reconstruction_classifier.joblib)
+# SÍ se versiona, para que la API funcione tras clonar sin reentrenar.
+# Si se quiere regenerar: python app/ml/train_model.py
+
+# Sistema / editor
+.DS_Store
+.vscode/
+.idea/
