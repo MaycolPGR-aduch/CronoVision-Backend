@@ -1,0 +1,18 @@
+# render.yaml
+# Configuración declarativa para Render.com — Native Python (sin Docker).
+# Render detecta este archivo automáticamente al conectar el repo.
+
+services:
+  - type: web
+    name: chrono-vision-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: GROQ_API_KEY
+        sync: false          # Render te pedirá el valor en el dashboard (no lo hardcodea)
+      - key: FRONTEND_ORIGIN
+        sync: false          # Se completa después con la URL del frontend
+    healthCheckPath: /
