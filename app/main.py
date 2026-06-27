@@ -19,7 +19,8 @@ app = FastAPI(
     description="API de reconstrucción de Chrono-Vision (clasificación ML + plantillas de escena A-Frame).",
 )
 
-# CORS: permite al frontend Vite (5173) consumir la API.
+# CORS: permite al frontend Vite (5173) + orígenes de producción configurados
+# en la variable FRONTEND_ORIGIN (separados por coma).
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
