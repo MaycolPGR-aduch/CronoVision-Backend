@@ -27,10 +27,12 @@ SERVICE_VERSION = "1.0.0"
 MODEL_VERSION = "tfidf-logreg-v1"
 
 # ── CORS ──────────────────────────────────────────────────────────────────────
-# Orígenes del frontend en desarrollo + uno extra configurable por entorno.
+# FRONTEND_ORIGIN acepta uno o varios orígenes separados por coma.
+# Ejemplo en Render: https://chrono-vision.web.app,https://chrono-vision.vercel.app
 _DEFAULT_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]
-FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN")
-CORS_ORIGINS = _DEFAULT_ORIGINS + ([FRONTEND_ORIGIN] if FRONTEND_ORIGIN else [])
+FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "")
+_extra = [o.strip() for o in FRONTEND_ORIGIN.split(",") if o.strip()]
+CORS_ORIGINS = _DEFAULT_ORIGINS + _extra
 
 # ── Mapeo clase ML → archivo de plantilla de escena ───────────────────────────
 TEMPLATE_BY_CLASS = {
