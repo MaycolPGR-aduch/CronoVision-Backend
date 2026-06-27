@@ -1,17 +1,19 @@
 """
 routes.py
 Endpoints de la API Chrono-Vision:
-  GET  /                 → estado del servicio
-  GET  /sites            → lista resumida de sitios
-  GET  /sites/{site_id}  → info completa del sitio (404 si no existe)
-  POST /reconstruct      → predicción ML + JSON de reconstrucción A-Frame
+  GET  /                      → estado del servicio
+  GET  /sites                 → lista resumida de sitios
+  GET  /sites/{site_id}       → info completa del sitio (404 si no existe)
+  POST /reconstruct           → predicción ML + JSON de reconstrucción A-Frame
+  GET  /narrate/{site_id}     → narración histórica con streaming (Groq LLaMA 3)
 """
 
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 
 from app.config import SERVICE_NAME, SERVICE_VERSION
 from app.schemas.reconstruction import ReconstructionRequest, SiteSummary
-from app.services import dataset_service, ml_service, reconstruction_service
+from app.services import dataset_service, ml_service, reconstruction_service, narration_service
 
 router = APIRouter()
 
@@ -50,3 +52,31 @@ def reconstruct(req: ReconstructionRequest):
         return reconstruction_service.build_reconstruction(site, prediction)
     except reconstruction_service.TemplateError as exc:
         raise HTTPException(status_code=500, detail=str(exc))
+
+
+@router.get("/narrate/{site_id}", tags=["narration"])
+def narrate(site_id: str, year: int | None = None):
+    """
+    Genera una narración histórica inmersiva del sitio usando Groq (LLaMA 3)
+    con streaming de texto. El frontend la recibe chunk a chunk y la muestra
+    letra por letra en el panel.
+
+    Query param opcional:
+      - year: año de la reconstrucción (por defecto usa targetYear del dataset).
+    """
+    site = dataset_service.get_site(site_id)
+    if site is None:
+        raise HTTPException(status_code=404, detail=f"Sitio '{site_id}' no encontrado.")
+
+    target_year = year or site.get("targetYear", 2000)
+
+    return StreamingResponse(
+        narration_service.stream_narration(site, target_year),
+        media_type="text/plain; charset=utf-8",
+        headers={
+            # Deshabilita el buffering en nginx/proxies para que el stream
+            # llegue al cliente en tiempo real.
+            "X-Accel-Buffering": "no",
+            "Cache-Control": "no-cache",
+        },
+    )
