@@ -12,12 +12,19 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes import router
 from app.config import CORS_ORIGINS, SERVICE_NAME, SERVICE_VERSION
+from app.database import init_db
 
 app = FastAPI(
     title=SERVICE_NAME,
     version=SERVICE_VERSION,
     description="API de reconstrucción de Chrono-Vision (clasificación ML + plantillas de escena A-Frame).",
 )
+
+# Inicializa la BD SQLite al arrancar (crea tablas si no existen).
+@app.on_event("startup")
+def on_startup():
+    init_db()
+    print("[main] Base de datos SQLite inicializada.")
 
 # CORS: permite al frontend Vite (5173) + orígenes de producción configurados
 # en la variable FRONTEND_ORIGIN (separados por coma).
