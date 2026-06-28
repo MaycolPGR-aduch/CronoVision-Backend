@@ -20,3 +20,8 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# Base de datos SQLite (se genera en runtime, no versionar)
+*.db
+*.db-shm
+*.db-wal
